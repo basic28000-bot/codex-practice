@@ -5,47 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>나의 첫 GitHub 연동 페이지</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      min-height: 100vh;
+      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #eef6ff;
       color: #222;
+      background:
+        radial-gradient(circle at top left, rgba(124, 184, 255, 0.26), transparent 32%),
+        linear-gradient(135deg, #f7fbff 0%, #eef4f8 48%, #fff7f2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 18px;
+    }
+
+    .page-card {
+      width: min(100%, 720px);
+      padding: 52px 44px;
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 24px 70px rgba(43, 62, 80, 0.14);
       text-align: center;
-      padding: 80px 20px;
+      backdrop-filter: blur(16px);
     }
 
     h1 {
-      color: #2563eb;
-      font-size: 44px;
-      margin-bottom: 14px;
+      color: #1f5fbf;
+      font-size: 42px;
+      line-height: 1.18;
+      margin: 0 0 20px;
+      text-align: center;
     }
 
     p {
-      font-size: 20px;
-      line-height: 1.6;
-      max-width: 560px;
+      font-size: 19px;
+      line-height: 1.72;
+      max-width: 590px;
       margin: 0 auto 18px;
     }
 
     button {
-      margin-top: 30px;
-      padding: 14px 24px;
+      margin-top: 28px;
+      padding: 15px 30px;
       border: none;
-      border-radius: 6px;
-      background-color: #ff6b35;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff7a45, #f05252);
       color: white;
       font-size: 16px;
+      font-weight: 700;
       cursor: pointer;
+      box-shadow: 0 12px 28px rgba(240, 82, 82, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
     }
 
     button:hover {
-      background-color: #e85a24;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(240, 82, 82, 0.36);
+      filter: brightness(1.04);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 560px) {
+      .page-card {
+        padding: 38px 24px;
+        border-radius: 22px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>나의 첫 GitHub 연동 페이지</h1>
-  <p>이 페이지는 Codex와 GitHub로 관리되고 있습니다.</p>
-  <p>저는 웹페이지 만들기를 연습하고 있습니다. HTML로 내용을 만들고, CSS로 보기 좋게 꾸미는 방법을 하나씩 배우는 중입니다.</p>
-  <button onclick="alert('안녕하세요!')">문의하기</button>
+  <main class="page-card">
+    <h1>나의 첫 GitHub 연동 페이지</h1>
+    <p>이 페이지는 Codex와 GitHub로 관리되고 있습니다.</p>
+    <p>웹페이지 만들기를 연습하고 있습니다. HTML로 내용을 만들고 CSS로 보기 좋게 꾸미는 방법을 하나씩 배우는 중입니다.</p>
+    <button onclick="alert('안녕하세요!')">문의하기</button>
+  </main>
 </body>
 </html>
