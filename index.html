@@ -28,8 +28,10 @@
       padding: 52px 44px;
       border: 1px solid rgba(255, 255, 255, 0.78);
       border-radius: 28px;
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 24px 70px rgba(43, 62, 80, 0.14);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow:
+        0 22px 54px rgba(43, 62, 80, 0.10),
+        0 8px 22px rgba(43, 62, 80, 0.06);
       text-align: center;
       backdrop-filter: blur(16px);
     }
@@ -49,6 +51,16 @@
       margin: 0 auto 18px;
     }
 
+    .intro {
+      color: #334155;
+      font-weight: 700;
+    }
+
+    .description {
+      color: #475569;
+      max-width: 560px;
+    }
+
     button {
       margin-top: 28px;
       padding: 15px 30px;
@@ -59,18 +71,28 @@
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 12px 28px rgba(240, 82, 82, 0.28);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      box-shadow: 0 12px 28px rgba(240, 82, 82, 0.24);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease,
+        background 0.2s ease;
     }
 
     button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 34px rgba(240, 82, 82, 0.36);
-      filter: brightness(1.04);
+      background: linear-gradient(135deg, #ff8a5c, #e84855);
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(240, 82, 82, 0.32);
+      filter: brightness(1.05);
     }
 
     button:active {
       transform: translateY(0);
+    }
+
+    button:focus-visible {
+      outline: 3px solid rgba(31, 95, 191, 0.28);
+      outline-offset: 4px;
     }
 
     @media (max-width: 560px) {
@@ -92,8 +114,9 @@
 <body>
   <main class="page-card">
     <h1>나의 첫 GitHub 연동 페이지</h1>
-    <p>이 페이지는 Codex와 GitHub로 관리되고 있습니다.</p>
-    <p>웹페이지 만들기를 연습하고 있습니다. HTML로 내용을 만들고 CSS로 보기 좋게 꾸미는 방법을 하나씩 배우는 중입니다.</p>
+    <p class="intro">이 페이지는 Codex와 GitHub로 관리되고 있습니다.</p>
+    <p class="description">HTML로 내용을 만들고, CSS로 보기 좋게 꾸미는 방법을 연습하고 있습니다.</p>
+    <p class="description">작은 변경을 하나씩 기록하면서 웹페이지가 어떻게 달라지는지 배우는 중입니다.</p>
     <button onclick="alert('안녕하세요!')">문의하기</button>
   </main>
 </body>
